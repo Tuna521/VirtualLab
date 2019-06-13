@@ -30,17 +30,13 @@
                                             <action selector="blockBtn:" destination="BV1-FR-VrT" eventType="touchUpInside" id="u2Y-up-h0b"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoM-Xn-h3Z">
-                                        <rect key="frame" x="100" y="35" width="125" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtV-Je-1Fk" customClass="SAFollowButton" customModule="VirtualLab" customModuleProvider="target">
                                         <rect key="frame" x="138" y="683" width="153" height="81"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="sel"/>
+                                        <connections>
+                                            <action selector="selectButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ymg-df-1SR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-3j-K97">
                                         <rect key="frame" x="8" y="64" width="100" height="100"/>
@@ -131,6 +127,13 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.77498929790000004" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoM-Xn-h3Z">
+                                        <rect key="frame" x="83" y="35" width="125" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -143,6 +146,8 @@
                         <outlet property="colorBallField" destination="xcb-y9-cXK" id="Wrx-pm-0MY"/>
                         <outlet property="pickerView" destination="xcb-y9-cXK" id="dZW-Oa-mUM"/>
                         <outlet property="propertiesView" destination="gMC-45-dgm" id="dXW-nE-MRB"/>
+                        <outlet property="radiusNum" destination="SB6-fK-JeO" id="gfB-P8-Qtg"/>
+                        <outlet property="selectButton" destination="CtV-Je-1Fk" id="ybk-yA-DaD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

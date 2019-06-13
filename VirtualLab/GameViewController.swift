@@ -16,6 +16,17 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var block: Block!
     
     
+    @IBOutlet weak var radiusNum: UITextField!
+    
+    @IBOutlet weak var selectButton: SAFollowButton!
+    
+    
+    @IBAction func selectButton(_ sender: SAFollowButton) {
+        Ball.radiusInit = Int(radiusNum.text!)!
+        
+        
+    }
+    
     @IBOutlet weak var pickerView: UIPickerView!
     let color = ["red", "gold", "blue"]
     
@@ -39,7 +50,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func circleBtn(_ sender: UIButton) {
         print("Circle tipped")
         let position2 = CGPoint(x: 300, y: 600)
-        ball = Ball(radius: 50, scene: scene2, position: position2)
+        ball = Ball(radius: Ball.radiusInit, scene: scene2, position: position2)
         ball.setTexture(texture: "red-ball")
         propertiesView.isHidden = false
        // self.view.addSubview(propertiesView)
@@ -81,6 +92,8 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        radiusNum.text = String(50)
+        
         
         //set Delegates
         //self.collectionView.delegate = self
