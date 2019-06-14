@@ -10,7 +10,23 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, BallPropertiesControllerDelegate {
+    
+    func didPropertiesChange(properties: [String]) {
+        Ball.radiusInit = Int(properties[0])!
+        
+        //
+        //print(properties)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ball"){
+            if let nav = segue.destination as? UINavigationController, let  classBallProperties = nav.topViewController as? BallPropertiesController {
+                classBallProperties.delegate = self
+            }
+        }
+    }
+    
     var ball: Ball!
     var scene2: SKScene!
     var block: Block!
@@ -43,17 +59,19 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       // label.text = color[row]
+        // label.text = color[row]
     }
     
     
     @IBAction func circleBtn(_ sender: UIButton) {
         print("Circle tipped")
-        let position2 = CGPoint(x: 300, y: 600)
+        
+         let position2 = CGPoint(x: 300, y: 600)
         ball = Ball(radius: Ball.radiusInit, scene: scene2, position: position2)
         ball.setTexture(texture: "red-ball")
         propertiesView.isHidden = false
-       // self.view.addSubview(propertiesView)
+        // self.view.addSubview(propertiesView)
+        
     }
     
     
@@ -113,7 +131,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override var shouldAutorotate: Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -121,7 +139,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             return .all
         }
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -133,7 +151,7 @@ extension GameViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
         cell.setData(text: self.dataArray[indexPath.row])
         
         return cell

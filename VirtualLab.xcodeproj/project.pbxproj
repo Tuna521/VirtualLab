@@ -22,6 +22,7 @@
 		26BF1ABE22267D8D00B59FA4 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF1ABD22267D8D00B59FA4 /* Ball.swift */; };
 		26BF1AC2222FB89300B59FA4 /* InclinedPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF1AC1222FB89300B59FA4 /* InclinedPlane.swift */; };
 		26C78136223107CA001F0420 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C78135223107CA001F0420 /* Block.swift */; };
+		26D5949822B3C722008324D4 /* BallPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949722B3C722008324D4 /* BallPropertiesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		26BF1ABD22267D8D00B59FA4 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		26BF1AC1222FB89300B59FA4 /* InclinedPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InclinedPlane.swift; sourceTree = "<group>"; };
 		26C78135223107CA001F0420 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		26D5949722B3C722008324D4 /* BallPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallPropertiesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				266528F522A9409300D3682F /* SAFollowButton.swift */,
+				26D5949722B3C722008324D4 /* BallPropertiesController.swift */,
 			);
 			path = SubClass;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26BF1ABE22267D8D00B59FA4 /* Ball.swift in Sources */,
+				26D5949822B3C722008324D4 /* BallPropertiesController.swift in Sources */,
 				26BA008B223A1EA200AE3EE9 /* VineNode.swift in Sources */,
 				267B49E4221E7CDB00823FF9 /* GameScene.swift in Sources */,
 				26BA007F2238F0A200AE3EE9 /* Constant.swift in Sources */,
