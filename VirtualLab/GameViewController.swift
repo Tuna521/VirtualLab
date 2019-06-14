@@ -10,11 +10,12 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, BallPropertiesControllerDelegate {
+class GameViewController: UIViewController, BallPropertiesControllerDelegate {
     
     func didPropertiesChange(properties: [String]) {
         Ball.radiusInit = Int(properties[0])!
-        
+        Ball.xCoordinateInit = Int(properties[1])!
+        Ball.yCoordinateInit = Int(properties[2])!
         //
         //print(properties)
     }
@@ -32,44 +33,15 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var block: Block!
     
     
-    @IBOutlet weak var radiusNum: UITextField!
-    
-    @IBOutlet weak var selectButton: SAFollowButton!
-    
-    
-    @IBAction func selectButton(_ sender: SAFollowButton) {
-        Ball.radiusInit = Int(radiusNum.text!)!
-        
-        
-    }
-    
-    @IBOutlet weak var pickerView: UIPickerView!
-    let color = ["red", "gold", "blue"]
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return color [row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return color.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // label.text = color[row]
-    }
     
     
     @IBAction func circleBtn(_ sender: UIButton) {
         print("Circle tipped")
         
          let position2 = CGPoint(x: 300, y: 600)
-        ball = Ball(radius: Ball.radiusInit, scene: scene2, position: position2)
+        ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
         ball.setTexture(texture: "red-ball")
-        propertiesView.isHidden = false
+        
         // self.view.addSubview(propertiesView)
         
     }
@@ -110,8 +82,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        radiusNum.text = String(50)
-        
+       
         
         //set Delegates
         //self.collectionView.delegate = self
