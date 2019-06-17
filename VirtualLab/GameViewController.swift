@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, BallPropertiesControllerDelegate {
+class GameViewController: UIViewController, BallPropertiesControllerDelegate, BlockPropertiesControllerDelegate {
     
     func didPropertiesChange(properties: [String]) {
         Ball.radiusInit = Int(properties[0])!
@@ -20,13 +20,29 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate {
         //print(properties)
     }
     
+    func didPropertiesChange(properties: [String]) {
+        Block.widthInit = Int(properties[0])!
+        Block.heightInit = Int(properties[1])!
+        Ball.xCoordinateInit = Int(properties[2])!
+        Ball.yCoordinateInit = Int(properties[3])!
+        //
+        //print(properties)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ball"){
             if let nav = segue.destination as? UINavigationController, let  classBallProperties = nav.topViewController as? BallPropertiesController {
                 classBallProperties.delegate = self
             }
         }
+        if (segue.identifier == "block"){
+            if let nav = segue.destination as? UINavigationController, let classBlockProperties = nav.topViewController as? BallPropertiesController {
+                classBlockProperties.delegate = self
+            }
+        }
     }
+    
     
     var ball: Ball!
     var scene2: SKScene!
@@ -37,40 +53,22 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate {
     
     @IBAction func circleBtn(_ sender: UIButton) {
         print("Circle tipped")
-        
-         let position2 = CGPoint(x: 300, y: 600)
         ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
         ball.setTexture(texture: "red-ball")
         
-        // self.view.addSubview(propertiesView)
         
     }
     
     
     @IBAction func blockBtn(_ sender: UIButton) {
         print("This is the block")
-        let position3 = CGPoint(x: 100, y: 400)
-        block = Block(width: 200, height: 100, scene: scene2, position: position3)
+        block = Block(width: Block.widthInit, height: Block.heightInit, scene: scene2, position: CGPoint(x: Block.xCoordinateInit, y: Block.yCoordinateInit))
         //ball.physicsBody?.affectedByGravity = true
         block.setTexture(texture: "block")
     }
     
-    @IBOutlet weak var propertiesView: UIView!
-    
-    //ball property view now
-    
-    @IBAction func radiusBallField(_ sender: Any) {
-        
-    }
-    
-    @IBOutlet weak var colorBallField: UIPickerView!
     
     
-    @IBAction func xCoordinatesBallField(_ sender: Any) {
-    }
-    
-    @IBAction func yCoordinatesBallField(_ sender: Any) {
-    }
     
     
     @IBOutlet weak var collectionView: UICollectionView!

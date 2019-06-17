@@ -10,6 +10,10 @@ import Foundation
 import SpriteKit
 
 class Block: SKSpriteNode {
+    static var widthInit:Int = 200
+    static var heightInit:Int = 100
+    static var xCoordinateInit:Int = 100
+    static var yCoordinateInit:Int = 100
     var width: Int!
     var height: Int
     var blockPosition: CGPoint
