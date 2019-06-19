@@ -14,11 +14,11 @@ class GameScene: SKScene {
     var floor:SKShapeNode!
     var spring: Spring!
     var factor: Double!
-
+    private var currentNode: SKNode?
     
     override func didMove(to view: SKView) {
         //physicsWorld.contactDelegate = self
-        //physicsWorld.gravity = CGVector(dx: 0.0, dy: -9.8)
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: -9.8)
         //physicsWorld.speed = 1.0
         
         floor = SKShapeNode(rectOf: CGSize(width: size.width, height: 5))
@@ -69,19 +69,34 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            
+            let touchedNodes = self.nodes(at: location)
+            for node in touchedNodes.reversed() {
+                if node.name == "draggable" {
+                    self.currentNode?.physicsBody?.isDynamic = false
+                    self.currentNode = node
+                }
+            }
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if let touch = touches.first, let node = currentNode {
+            let touchLocation = touch.location(in: self)
+            node.position = touchLocation
+            node.physicsBody?.isDynamic = false
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-   
+        self.currentNode?.physicsBody?.isDynamic = true
+        self.currentNode = nil
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+        self.currentNode = nil
     }
     
     override func update(_ currentTime: TimeInterval) {

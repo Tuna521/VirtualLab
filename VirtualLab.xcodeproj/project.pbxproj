@@ -22,6 +22,7 @@
 		26C78136223107CA001F0420 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C78135223107CA001F0420 /* Block.swift */; };
 		26D5949822B3C722008324D4 /* BallPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949722B3C722008324D4 /* BallPropertiesController.swift */; };
 		26D5949C22B833D3008324D4 /* BlockPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */; };
+		26D5949E22BA2F10008324D4 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949D22BA2F0F008324D4 /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		26C78135223107CA001F0420 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		26D5949722B3C722008324D4 /* BallPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallPropertiesController.swift; sourceTree = "<group>"; };
 		26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPropertiesController.swift; sourceTree = "<group>"; };
+		26D5949D22BA2F0F008324D4 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				26BA008C223A1EC100AE3EE9 /* Spring.swift */,
 				267B49E5221E7CDB00823FF9 /* GameViewController.swift */,
 				267B49E7221E7CDB00823FF9 /* Main.storyboard */,
+				26D5949D22BA2F0F008324D4 /* Timer.swift */,
 				267B49EA221E7CDC00823FF9 /* Assets.xcassets */,
 				267B49EC221E7CDD00823FF9 /* LaunchScreen.storyboard */,
 				267B49EF221E7CDD00823FF9 /* Info.plist */,
@@ -193,6 +196,7 @@
 				26D5949822B3C722008324D4 /* BallPropertiesController.swift in Sources */,
 				26BA008B223A1EA200AE3EE9 /* VineNode.swift in Sources */,
 				267B49E4221E7CDB00823FF9 /* GameScene.swift in Sources */,
+				26D5949E22BA2F10008324D4 /* Timer.swift in Sources */,
 				26D5949C22B833D3008324D4 /* BlockPropertiesController.swift in Sources */,
 				26BA007F2238F0A200AE3EE9 /* Constant.swift in Sources */,
 				26BF1AC2222FB89300B59FA4 /* InclinedPlane.swift in Sources */,

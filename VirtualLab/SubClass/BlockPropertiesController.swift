@@ -27,7 +27,7 @@ class BlockPropertiesController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var yCoordinateBlock: UITextField!
     
     var pickedColor: String = "brown"
-    let color = ["brown", "grey"]
+    let color = ["brown", "grey", "wood"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
