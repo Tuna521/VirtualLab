@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		263D80CB2255F0DB0018751D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D80C92255F0DB0018751D /* ItemCell.swift */; };
-		263D80CC2255F0DB0018751D /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 263D80CA2255F0DB0018751D /* ItemCell.xib */; };
 		266528F622A9409300D3682F /* SAFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266528F522A9409300D3682F /* SAFollowButton.swift */; };
 		267B49DE221E7CDA00823FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B49DD221E7CDA00823FF9 /* AppDelegate.swift */; };
 		267B49E4221E7CDB00823FF9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B49E3221E7CDB00823FF9 /* GameScene.swift */; };
@@ -27,8 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		263D80C92255F0DB0018751D /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemCell.swift; path = ../../../Xcode/CollectionView/ItemCell.swift; sourceTree = "<group>"; };
-		263D80CA2255F0DB0018751D /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemCell.xib; path = ../../../Xcode/CollectionView/ItemCell.xib; sourceTree = "<group>"; };
 		266528F522A9409300D3682F /* SAFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAFollowButton.swift; sourceTree = "<group>"; };
 		267B49DA221E7CDA00823FF9 /* VirtualLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267B49DD221E7CDA00823FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,15 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		263D80C82255F0B30018751D /* ItemCell */ = {
-			isa = PBXGroup;
-			children = (
-				263D80C92255F0DB0018751D /* ItemCell.swift */,
-				263D80CA2255F0DB0018751D /* ItemCell.xib */,
-			);
-			path = ItemCell;
-			sourceTree = "<group>";
-		};
 		266528F422A9404700D3682F /* SubClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				266528F422A9404700D3682F /* SubClass */,
-				263D80C82255F0B30018751D /* ItemCell */,
 				267B49DD221E7CDA00823FF9 /* AppDelegate.swift */,
 				267B49E3221E7CDB00823FF9 /* GameScene.swift */,
 				26C7813722310969001F0420 /* Objects */,
@@ -190,7 +176,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263D80CC2255F0DB0018751D /* ItemCell.xib in Resources */,
 				267B49E9221E7CDB00823FF9 /* Main.storyboard in Resources */,
 				267B49EB221E7CDC00823FF9 /* Assets.xcassets in Resources */,
 				267B49EE221E7CDD00823FF9 /* LaunchScreen.storyboard in Resources */,
@@ -210,7 +195,6 @@
 				267B49E4221E7CDB00823FF9 /* GameScene.swift in Sources */,
 				26D5949C22B833D3008324D4 /* BlockPropertiesController.swift in Sources */,
 				26BA007F2238F0A200AE3EE9 /* Constant.swift in Sources */,
-				263D80CB2255F0DB0018751D /* ItemCell.swift in Sources */,
 				26BF1AC2222FB89300B59FA4 /* InclinedPlane.swift in Sources */,
 				266528F622A9409300D3682F /* SAFollowButton.swift in Sources */,
 				267B49E6221E7CDB00823FF9 /* GameViewController.swift in Sources */,
