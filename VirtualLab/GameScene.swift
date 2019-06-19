@@ -21,15 +21,6 @@ class GameScene: SKScene {
         //physicsWorld.gravity = CGVector(dx: 0.0, dy: -9.8)
         //physicsWorld.speed = 1.0
         
-        let position = CGPoint(x: 100, y: 500)
-        ball = Ball(radius: 50, scene: self, position: position)
-        //ball.physicsBody?.affectedByGravity = true
-        
-        let position2 = CGPoint(x: 300, y: 600)
-        let ball2 = Ball(radius: 50, scene: self, position: position2)
-        ball2.setTexture(texture: "red-ball")
-        //ball2.physic
-        
         floor = SKShapeNode(rectOf: CGSize(width: size.width, height: 5))
         floor.position = CGPoint(x: size.width / 2, y: 50)
         floor.fillColor = SKColor.red
@@ -38,24 +29,27 @@ class GameScene: SKScene {
         
         let inclinedPlane = InclinedPlane(angle: 10, length: 400, width: 30, scene: self, position: CGPoint(x: 300, y: 300))
         
-        let position3 = CGPoint(x: 150, y: 400)
+        let position = CGPoint(x: 100, y: 500)
+        let ball1 = Ball(radius: 30, scene: self, position: position)
+        //ball.physicsBody?.affectedByGravity = true
+        
+        let position3 = CGPoint(x: 500, y: 400)
         let block = Block(width: 200, height: 100, scene: self, position: position3)
         //ball.physicsBody?.affectedByGravity = true
         block.setTexture(texture: "block")
         
+        let position2 = CGPoint(x: 300, y: 600)
+        let ball2 = Ball(radius: 20, scene: self, position: position2)
+        ball2.setTexture(texture: "metalBall")
+        //ball2.physic
+        
         let positionVine = CGPoint(x: 100, y: 400)
         let vine1 = VineNode(length: 10, anchorPoint: positionVine)
         vine1.addToScene(self)
-        let bob = SKSpriteNode(imageNamed: "pin")
-        bob.physicsBody = SKPhysicsBody(circleOfRadius: 2)
-        addChild(bob)
-        vine1.attachToBob(bob)
+        vine1.attachToBob(ball2)
         
         spring = Spring(scene: self, SpringPosition: CGPoint(x: 400, y: 300))
-        let bob2 = SKSpriteNode(imageNamed: "pin")
-        bob2.physicsBody = SKPhysicsBody(circleOfRadius: 2)
-        addChild(bob2)
-        spring.attachBody(bob2)
+        //spring.attachBody(ball1)
         //let positionSpring = CGPoint(x: 500, y: 600)
         //spring.position = positionSpring
         //spring.anchorPoint = CGPoint(x: 0, y: 1)

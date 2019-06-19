@@ -14,12 +14,13 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     
     func didPropertiesChange(properties: [String]) {
         Ball.radiusInit = Int(properties[0])!
-        Ball.xCoordinateInit = Int(properties[1])!
-        Ball.yCoordinateInit = Int(properties[2])!
+        Ball.colorInit = properties[1]
+        Ball.xCoordinateInit = Int(properties[2])!
+        Ball.yCoordinateInit = Int(properties[3])!
         //
         //print(properties)
     }
-    
+    /*
     func didPropertiesChange(properties: [String]) {
         Block.widthInit = Int(properties[0])!
         Block.heightInit = Int(properties[1])!
@@ -28,7 +29,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         //
         //print(properties)
     }
-    
+    */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ball"){
@@ -54,7 +55,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     @IBAction func circleBtn(_ sender: UIButton) {
         print("Circle tipped")
         ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
-        ball.setTexture(texture: "red-ball")
+        ball.setTexture(texture: Ball.colorInit)
         
         
     }

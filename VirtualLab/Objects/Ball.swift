@@ -13,6 +13,7 @@ class Ball: SKSpriteNode {
     static var radiusInit:Int = 50
     static var xCoordinateInit:Int = 50
     static var yCoordinateInit:Int = 50
+    static var colorInit:String = "redBall"
     var ballRadius: Int!
     var ballPosition: CGPoint
     var ballTexture: SKTexture
@@ -22,7 +23,7 @@ class Ball: SKSpriteNode {
         
         self.ballRadius = radius
         self.ballPosition = position
-        self.ballTexture = SKTexture(imageNamed: "ball")
+        self.ballTexture = SKTexture(imageNamed: "goldBall")
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: radius*2, height: radius*2))
         self.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(radius))
         self.position = position
