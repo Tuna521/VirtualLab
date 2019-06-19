@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-hr-Stn">
-                                <rect key="frame" x="821" y="70" width="291" height="764"/>
+                                <rect key="frame" x="869" y="70" width="243" height="764"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-R8-Sgi">
-                                        <rect key="frame" x="159" y="64" width="100" height="100"/>
+                                        <rect key="frame" x="132" y="64" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="square"/>
                                         <connections>
@@ -31,22 +31,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-3j-K97">
-                                        <rect key="frame" x="8" y="64" width="100" height="100"/>
+                                        <rect key="frame" x="10" y="64" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="ball-icon"/>
                                         <connections>
                                             <action selector="circleBtn:" destination="BV1-FR-VrT" eventType="touchUpInside" id="x3P-hS-FTg"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoM-Xn-h3Z">
-                                        <rect key="frame" x="83" y="35" width="125" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-2X-rGj">
-                                        <rect key="frame" x="19" y="166" width="79" height="30"/>
+                                        <rect key="frame" x="21" y="166" width="79" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Properties"/>
                                         <connections>
@@ -54,13 +47,20 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-32-a1g">
-                                        <rect key="frame" x="174" y="166" width="71" height="30"/>
+                                        <rect key="frame" x="147" y="166" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Properties"/>
                                         <connections>
                                             <segue destination="Vwf-7F-5VL" kind="presentation" identifier="block" id="YWA-GL-UPu"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoM-Xn-h3Z">
+                                        <rect key="frame" x="59" y="27" width="125" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -191,7 +191,6 @@
         <!--Block Properties-->
         <scene sceneID="LdB-cd-zuA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hjD-W1-OxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LDb-uP-erG" customClass="BlockPropertiesController" customModule="VirtualLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KOG-We-C8a">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
@@ -283,13 +282,13 @@
                         <outlet property="yCoordinateBlock" destination="leX-ku-azE" id="vxU-tu-3Qj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjD-W1-OxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2217.6258992805756" y="172.66187050359713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m4E-Mt-lhQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VSM-XH-NDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Vwf-7F-5VL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kVR-y3-bki">
                         <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
@@ -299,6 +298,7 @@
                         <segue destination="LDb-uP-erG" kind="relationship" relationship="rootViewController" id="HeL-bG-5gC"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSM-XH-NDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1529" y="173"/>
         </scene>
