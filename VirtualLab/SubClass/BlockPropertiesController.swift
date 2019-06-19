@@ -26,7 +26,8 @@ class BlockPropertiesController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var xCoordinateBlock: UITextField!
     @IBOutlet weak var yCoordinateBlock: UITextField!
     
-    let color = ["brown", "gray"]
+    var pickedColor: String = "brown"
+    let color = ["brown", "grey"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -41,7 +42,7 @@ class BlockPropertiesController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // label.text = color[row]
+        pickedColor = color[row]
     }
     
     var properties: [String] = []
@@ -55,7 +56,8 @@ class BlockPropertiesController: UIViewController, UIPickerViewDelegate, UIPicke
         properties.append(heightBlock.text!)
         properties.append(xCoordinateBlock.text!)
         properties.append(yCoordinateBlock.text!)
-        
+        pickedColor = pickedColor + "Block"
+        properties.append(pickedColor)
         delegate?.didPropertiesChangeBlock(properties: properties)
         navigationController?.dismiss(animated: true)
     }

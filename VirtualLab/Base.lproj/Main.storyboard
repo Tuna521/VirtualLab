@@ -155,8 +155,8 @@
                                 <rect key="frame" x="443" y="345" width="221" height="84"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BV1-FR-VrT" id="dU9-xn-eIx"/>
-                                    <outlet property="delegate" destination="BV1-FR-VrT" id="ltC-Vi-e8M"/>
+                                    <outlet property="dataSource" destination="m38-6i-DJj" id="1jN-Rf-AaL"/>
+                                    <outlet property="delegate" destination="m38-6i-DJj" id="XQ1-L1-Hqh"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9x-20-ASl">
@@ -262,6 +262,10 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iq9-Dx-4vA">
                                 <rect key="frame" x="446" y="379" width="221" height="84"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LDb-uP-erG" id="UiP-ST-fAk"/>
+                                    <outlet property="delegate" destination="LDb-uP-erG" id="fWi-2b-NfU"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

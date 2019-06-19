@@ -11,8 +11,8 @@ import SpriteKit
 
 class Ball: SKSpriteNode {
     static var radiusInit:Int = 50
-    static var xCoordinateInit:Int = 50
-    static var yCoordinateInit:Int = 50
+    static var xCoordinateInit:Int = 200
+    static var yCoordinateInit:Int = 200
     static var colorInit:String = "redBall"
     var ballRadius: Int!
     var ballPosition: CGPoint

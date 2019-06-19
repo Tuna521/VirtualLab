@@ -12,8 +12,9 @@ import SpriteKit
 class Block: SKSpriteNode {
     static var widthInit:Int = 200
     static var heightInit:Int = 100
-    static var xCoordinateInit:Int = 100
-    static var yCoordinateInit:Int = 100
+    static var xCoordinateInit:Int = 400
+    static var yCoordinateInit:Int = 400
+    static var colorInit:String = "brownBlock"
     var width: Int!
     var height: Int
     var blockPosition: CGPoint
@@ -25,7 +26,7 @@ class Block: SKSpriteNode {
         self.width = width
         self.height = height
         self.blockPosition = position
-        self.blockTexture = SKTexture(imageNamed: "block")
+        self.blockTexture = SKTexture(imageNamed: "greyBlock")
         super.init(texture: blockTexture, color: UIColor.clear, size: CGSize(width: width, height: height))
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: width, height: height))
         self.position = position

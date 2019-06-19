@@ -36,7 +36,7 @@ class GameScene: SKScene {
         let position3 = CGPoint(x: 500, y: 400)
         let block = Block(width: 200, height: 100, scene: self, position: position3)
         //ball.physicsBody?.affectedByGravity = true
-        block.setTexture(texture: "block")
+        block.setTexture(texture: "greyBlock")
         
         let position2 = CGPoint(x: 300, y: 600)
         let ball2 = Ball(radius: 20, scene: self, position: position2)

@@ -19,7 +19,7 @@ class InclinedPlane: SKSpriteNode{
         self.angle = angle
         self.length = length
         self.width = width
-        let texture = SKTexture(imageNamed: "Grey")
+        let texture = SKTexture(imageNamed: "greyBlock")
         super.init(texture: texture, color: UIColor.clear, size: CGSize(width: length, height: width))
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: length, height: width))
         self.position = position

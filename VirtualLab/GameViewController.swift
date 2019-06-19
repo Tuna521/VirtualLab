@@ -26,6 +26,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         Block.heightInit = Int(properties[1])!
         Block.xCoordinateInit = Int(properties[2])!
         Block.yCoordinateInit = Int(properties[3])!
+        Block.colorInit = properties[4]
         //
         //print(properties)
     }
@@ -65,7 +66,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         print("This is the block")
         block = Block(width: Block.widthInit, height: Block.heightInit, scene: scene2, position: CGPoint(x: Block.xCoordinateInit, y: Block.yCoordinateInit))
         //ball.physicsBody?.affectedByGravity = true
-        block.setTexture(texture: "block")
+        block.setTexture(texture: Block.colorInit)
     }
     
     
@@ -114,7 +115,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         return true
     }
 }
-
+/*
 extension GameViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dataArray.count
@@ -127,3 +128,4 @@ extension GameViewController: UICollectionViewDataSource{
         return cell
     }
 }
+*/
