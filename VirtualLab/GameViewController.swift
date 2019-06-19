@@ -12,7 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController, BallPropertiesControllerDelegate, BlockPropertiesControllerDelegate {
     
-    func didPropertiesChange(properties: [String]) {
+    func didPropertiesChangeBall(properties: [String]) {
         Ball.radiusInit = Int(properties[0])!
         Ball.colorInit = properties[1]
         Ball.xCoordinateInit = Int(properties[2])!
@@ -20,16 +20,16 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         //
         //print(properties)
     }
-    /*
-    func didPropertiesChange(properties: [String]) {
+    
+    func didPropertiesChangeBlock(properties: [String]) {
         Block.widthInit = Int(properties[0])!
         Block.heightInit = Int(properties[1])!
-        Ball.xCoordinateInit = Int(properties[2])!
-        Ball.yCoordinateInit = Int(properties[3])!
+        Block.xCoordinateInit = Int(properties[2])!
+        Block.yCoordinateInit = Int(properties[3])!
         //
         //print(properties)
     }
-    */
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ball"){
@@ -38,7 +38,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
             }
         }
         if (segue.identifier == "block"){
-            if let nav = segue.destination as? UINavigationController, let classBlockProperties = nav.topViewController as? BallPropertiesController {
+            if let nav = segue.destination as? UINavigationController, let classBlockProperties = nav.topViewController as? BlockPropertiesController {
                 classBlockProperties.delegate = self
             }
         }
