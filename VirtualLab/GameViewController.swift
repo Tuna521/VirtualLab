@@ -51,6 +51,24 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     var block: Block!
     
     
+    @IBAction func gravityAffectSwitch(_ sender: UISwitch) {
+        if (sender.isOn == true){
+            scene2.physicsWorld.gravity = CGVector(dx: 0.0, dy: -9.8)
+        }else {
+            scene2.physicsWorld.gravity = CGVector(dx: 0.0, dy: 0)
+        }
+        
+    }
+    
+    
+    @IBAction func clearAllBtn(_ sender: UIButton) {
+        scene2.removeAllChildren()
+        let floor = SKShapeNode(rectOf: CGSize(width: scene2.size.width, height: 5))
+        floor.position = CGPoint(x: scene2.size.width / 2, y: 50)
+        floor.fillColor = SKColor.red
+        floor.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -scene2.size.width / 2, y: 0), to: CGPoint(x: scene2.size.width, y: 0))
+        scene2.addChild(floor)
+    }
     
     
     @IBAction func circleBtn(_ sender: UIButton) {

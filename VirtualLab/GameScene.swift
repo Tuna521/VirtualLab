@@ -49,11 +49,13 @@ class GameScene: SKScene {
         vine1.attachToBob(ball2)
         
         spring = Spring(scene: self, SpringPosition: CGPoint(x: 400, y: 300))
-        //spring.attachBody(ball1)
+        spring.attachBody(ball1)
         //let positionSpring = CGPoint(x: 500, y: 600)
         //spring.position = positionSpring
         //spring.anchorPoint = CGPoint(x: 0, y: 1)
         //addChild(spring)
+        
+        //spring.removeFromParent()
     }
     
     

@@ -28,6 +28,8 @@ class Ball: SKSpriteNode {
         self.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(radius))
         self.position = position
         self.texture = self.ballTexture
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.name = "draggable"
         scene.addChild(self)
         
     }

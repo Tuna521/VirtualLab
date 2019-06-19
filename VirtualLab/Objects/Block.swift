@@ -31,6 +31,7 @@ class Block: SKSpriteNode {
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: width, height: height))
         self.position = position
         self.texture = self.blockTexture
+        self.name = "draggable"
         scene.addChild(self)
 
     }
