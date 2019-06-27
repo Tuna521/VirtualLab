@@ -46,13 +46,17 @@ class BallPropertiesController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
+        if radiusBall.text! == ""{properties.append(String(Ball.radiusInit))}
+        else{properties.append(radiusBall.text!)}
         
-        properties.append(radiusBall.text!)
         pickedColor = pickedColor+"Ball"
-        print(pickedColor)
         properties.append(pickedColor)
-        properties.append(xCoordinateBall.text!)
-        properties.append(yCoordinateBall.text!)
+        
+        if xCoordinateBall.text! == ""{properties.append(String(Ball.xCoordinateInit))}
+        else{properties.append(xCoordinateBall.text!)}
+        
+        if yCoordinateBall.text! == ""{properties.append(String(Ball.yCoordinateInit))}
+        else{properties.append(yCoordinateBall.text!)}
         
         delegate?.didPropertiesChangeBall(properties: properties)
         navigationController?.dismiss(animated: true)

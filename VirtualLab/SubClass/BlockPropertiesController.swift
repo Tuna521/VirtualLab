@@ -51,11 +51,18 @@ class BlockPropertiesController: UIViewController, UIPickerViewDelegate, UIPicke
     
     
     @IBAction func doneButtonBlock(_ sender: Any) {
+        if widthBlock.text! == ""{properties.append(String(Block.widthInit))}
+        else{properties.append(widthBlock.text!)}
+
+        if heightBlock.text! == ""{properties.append(String(Block.heightInit))}
+        else{properties.append(heightBlock.text!)}
+
+        if xCoordinateBlock.text! == ""{properties.append(String(Block.xCoordinateInit))}
+        else{properties.append(xCoordinateBlock.text!)}
         
-        properties.append(widthBlock.text!)
-        properties.append(heightBlock.text!)
-        properties.append(xCoordinateBlock.text!)
-        properties.append(yCoordinateBlock.text!)
+        if yCoordinateBlock.text! == ""{properties.append(String(Block.yCoordinateInit))}
+        else{properties.append(yCoordinateBlock.text!)}
+        
         pickedColor = pickedColor + "Block"
         properties.append(pickedColor)
         delegate?.didPropertiesChangeBlock(properties: properties)
