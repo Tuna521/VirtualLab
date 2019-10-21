@@ -29,8 +29,6 @@ class GameScene: SKScene {
         
         let inclinedPlane = InclinedPlane(angle: 10, length: 400, width: 30, scene: self, position: CGPoint(x: 300, y: 300))
         
-        let position = CGPoint(x: 100, y: 500)
-        let ball1 = Ball(radius: 30, scene: self, position: position)
         //ball.physicsBody?.affectedByGravity = true
         
         let position3 = CGPoint(x: 500, y: 400)
@@ -48,7 +46,8 @@ class GameScene: SKScene {
         vine1.addToScene(self)
         vine1.attachToBob(ball2)
         
-        spring = Spring(scene: self, SpringPosition: CGPoint(x: 400, y: 300))
+        let ball1 = Ball(radius: 30, scene: self, position: CGPoint(x: 700, y: 700))
+        spring = Spring(scene: self, SpringPosition: CGPoint(x: 700, y: 700))
         spring.attachBody(ball1)
         //let positionSpring = CGPoint(x: 500, y: 600)
         //spring.position = positionSpring

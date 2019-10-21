@@ -20,11 +20,12 @@ import SpriteKit
     init(scene: SKScene, SpringPosition: CGPoint) {
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 44, height: 150))
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 44, height: 150), center: CGPoint(x: 22, y: -75))
-        //self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.isDynamic = true
+        self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.isDynamic = false
         self.texture = SKTexture(imageNamed: "spring")
-        self.anchorPoint = CGPoint(x: 0, y: 1)
-        self.position = SpringPosition
+        self.anchorPoint = SpringPosition
+            //CGPoint(x: 0, y: 1)
+        //self.position = SpringPosition
         scene.addChild(self)
     }
     
@@ -39,11 +40,17 @@ import SpriteKit
     }
     */
     
+    
     func attachBody(_ body: SKSpriteNode) {
         // set up connecting joint
+        self.position = CGPoint(x: body.position.x, y: body.position.y + body.size.height * 0.1)
+        // set up connecting joint
         let joint = SKPhysicsJointPin.joint(withBodyA: self.physicsBody!,
-                                            bodyB: body.physicsBody!, anchor: CGPoint(x: 0.5, y: 0))
-        body.scene?.physicsWorld.add(joint)
+                                            bodyB: body.physicsBody!, anchor: CGPoint (x: self.frame.midX, y: self.frame.midY))
+        
+        //let joint = SKPhysicsJointPin.joint(withBodyA: self.physicsBody!,
+        //                                    bodyB: body.physicsBody!, anchor: CGPoint(x: 0.0, y: 0.0))
+        self.scene?.physicsWorld.add(joint)
     }
 }
 

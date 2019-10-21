@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, BallPropertiesControllerDelegate, BlockPropertiesControllerDelegate {
+class GameViewController: UIViewController, BallPropertiesControllerDelegate, BlockPropertiesControllerDelegate, RopePropertiesControllerDelegate, InclinedPlanePropertiesControllerDelegate {
     
     func didPropertiesChangeBall(properties: [String]) {
         Ball.radiusInit = Int(properties[0])!
@@ -31,6 +31,25 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         //print(properties)
     }
     
+    func didPropertiesChangeRope(properties: [String]) {
+        VineNode.lengthInit = Int(properties[0])!
+        VineNode.xCoordinateInit = Int(properties[1])!
+        VineNode.yCoordinateInit = Int(properties[2])!
+        VineNode.attachObjectInit = properties[3]
+        //
+        print(properties)
+    }
+    
+    func didPropertiesChangeInclinedPlane(properties: [String]) {
+        InclinedPlane.angleInit = Double(properties[0])!
+        InclinedPlane.lengthInit = Int(properties[1])!
+        InclinedPlane.widthInit = Int(properties[2])!
+        InclinedPlane.xCoordinateInit = Int(properties[3])!
+        InclinedPlane.yCoordinateInit = Int(properties[4])!
+        //
+        print(properties)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ball"){
@@ -38,9 +57,21 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
                 classBallProperties.delegate = self
             }
         }
+        
         if (segue.identifier == "block"){
             if let nav = segue.destination as? UINavigationController, let classBlockProperties = nav.topViewController as? BlockPropertiesController {
                 classBlockProperties.delegate = self
+            }
+        }
+        
+        if (segue.identifier == "rope"){
+            if let nav = segue.destination as? UINavigationController, let classRopeProperties = nav.topViewController as? RopePropertiesController {
+                classRopeProperties.delegate = self
+            }
+        }
+        if (segue.identifier == "inclinedPlane"){
+            if let nav = segue.destination as? UINavigationController, let classInclinedPlaneProperties = nav.topViewController as? InclinedPlanePropertiesController {
+                classInclinedPlaneProperties.delegate = self
             }
         }
     }
@@ -75,8 +106,6 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         print("Circle tipped")
         ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
         ball.setTexture(texture: Ball.colorInit)
-        
-        
     }
     
     
@@ -88,6 +117,28 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     }
     
     
+    @IBAction func ropeBtn(_ sender: UIButton) {
+        print("Hey yoooo Rope here")
+        let vine = VineNode(length:VineNode.lengthInit, anchorPoint: CGPoint(x: VineNode.xCoordinateInit, y: VineNode.yCoordinateInit))
+        vine.addToScene(scene2)
+        if (VineNode.attachObjectInit == "Ball"){
+            ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
+            ball.setTexture(texture: Ball.colorInit)
+            vine.attachToBob(ball)
+        }
+        if (VineNode.attachObjectInit == "Block"){
+            block = Block(width: Block.widthInit, height: Block.heightInit, scene: scene2, position: CGPoint(x: Block.xCoordinateInit, y: Block.yCoordinateInit))
+            //ball.physicsBody?.affectedByGravity = true
+            block.setTexture(texture: Block.colorInit)
+            vine.attachToBob(block)
+        }
+    }
+    
+    
+    @IBAction func inclinedPlaneBtn(_ sender: UIButton) {
+        print("go to corner, it is the warmest 90 degrees")
+        let inclPlane = InclinedPlane(angle: InclinedPlane.angleInit, length: InclinedPlane.lengthInit, width: InclinedPlane.widthInit, scene: scene2, position: CGPoint(x: InclinedPlane.xCoordinateInit, y: InclinedPlane.yCoordinateInit))
+    }
     
     
     

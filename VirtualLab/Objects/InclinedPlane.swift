@@ -10,6 +10,12 @@ import Foundation
 import SpriteKit
 
 class InclinedPlane: SKSpriteNode{
+    static var angleInit:Double = 10.0
+    static var lengthInit:Int = 400
+    static var widthInit:Int = 30
+    static var xCoordinateInit:Int = 300
+    static var yCoordinateInit:Int = 300
+    
     var angle: Double
     var length: Int
     var width: Int
@@ -26,13 +32,13 @@ class InclinedPlane: SKSpriteNode{
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.isDynamic = false
         self.zRotation = CGFloat((CGFloat(angle) * CGFloat.pi)/180)
-        let pinned = SKSpriteNode(imageNamed: "pin")
-        pinned.physicsBody = SKPhysicsBody(texture: pinned.texture!,
-                                           size: pinned.size)
-        pinned.position = CGPoint(x: 0,y: 0)
-        pinned.physicsBody?.pinned = true
+        //let pinned = SKSpriteNode(imageNamed: "pin")
+        //pinned.physicsBody = SKPhysicsBody(texture: pinned.texture!,
+        //                                   size: pinned.size)
+        //pinned.position = CGPoint(x: 0,y: 0)
+        //pinned.physicsBody?.pinned = true
  
-        self.addChild(pinned)
+        //self.addChild(pinned)
  
         scene.addChild(self)
         

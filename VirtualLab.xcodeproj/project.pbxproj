@@ -14,6 +14,7 @@
 		267B49E9221E7CDB00823FF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267B49E7221E7CDB00823FF9 /* Main.storyboard */; };
 		267B49EB221E7CDC00823FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267B49EA221E7CDC00823FF9 /* Assets.xcassets */; };
 		267B49EE221E7CDD00823FF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267B49EC221E7CDD00823FF9 /* LaunchScreen.storyboard */; };
+		269203E2234C8A2E006C4665 /* InclinedPlanePropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269203E1234C8A2E006C4665 /* InclinedPlanePropertiesController.swift */; };
 		26BA007F2238F0A200AE3EE9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA007E2238F0A200AE3EE9 /* Constant.swift */; };
 		26BA008B223A1EA200AE3EE9 /* VineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA008A223A1EA200AE3EE9 /* VineNode.swift */; };
 		26BA008D223A1EC100AE3EE9 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA008C223A1EC100AE3EE9 /* Spring.swift */; };
@@ -23,6 +24,7 @@
 		26D5949822B3C722008324D4 /* BallPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949722B3C722008324D4 /* BallPropertiesController.swift */; };
 		26D5949C22B833D3008324D4 /* BlockPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */; };
 		26D5949E22BA2F10008324D4 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949D22BA2F0F008324D4 /* Timer.swift */; };
+		26D594A022C53E1B008324D4 /* RopePropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949F22C53E1B008324D4 /* RopePropertiesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,7 @@
 		267B49EA221E7CDC00823FF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		267B49ED221E7CDD00823FF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		267B49EF221E7CDD00823FF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		269203E1234C8A2E006C4665 /* InclinedPlanePropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InclinedPlanePropertiesController.swift; sourceTree = "<group>"; };
 		26BA007E2238F0A200AE3EE9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		26BA008A223A1EA200AE3EE9 /* VineNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VineNode.swift; sourceTree = "<group>"; };
 		26BA008C223A1EC100AE3EE9 /* Spring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		26D5949722B3C722008324D4 /* BallPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallPropertiesController.swift; sourceTree = "<group>"; };
 		26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPropertiesController.swift; sourceTree = "<group>"; };
 		26D5949D22BA2F0F008324D4 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		26D5949F22C53E1B008324D4 /* RopePropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopePropertiesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				266528F522A9409300D3682F /* SAFollowButton.swift */,
 				26D5949722B3C722008324D4 /* BallPropertiesController.swift */,
 				26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */,
+				26D5949F22C53E1B008324D4 /* RopePropertiesController.swift */,
+				269203E1234C8A2E006C4665 /* InclinedPlanePropertiesController.swift */,
 			);
 			path = SubClass;
 			sourceTree = "<group>";
@@ -113,8 +119,8 @@
 		26C7813722310969001F0420 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				26BF1ABD22267D8D00B59FA4 /* Ball.swift */,
 				26BF1AC1222FB89300B59FA4 /* InclinedPlane.swift */,
+				26BF1ABD22267D8D00B59FA4 /* Ball.swift */,
 				26C78135223107CA001F0420 /* Block.swift */,
 				26BA008A223A1EA200AE3EE9 /* VineNode.swift */,
 			);
@@ -202,7 +208,9 @@
 				26BF1AC2222FB89300B59FA4 /* InclinedPlane.swift in Sources */,
 				266528F622A9409300D3682F /* SAFollowButton.swift in Sources */,
 				267B49E6221E7CDB00823FF9 /* GameViewController.swift in Sources */,
+				26D594A022C53E1B008324D4 /* RopePropertiesController.swift in Sources */,
 				26C78136223107CA001F0420 /* Block.swift in Sources */,
+				269203E2234C8A2E006C4665 /* InclinedPlanePropertiesController.swift in Sources */,
 				267B49DE221E7CDA00823FF9 /* AppDelegate.swift in Sources */,
 				26BA008D223A1EC100AE3EE9 /* Spring.swift in Sources */,
 			);
