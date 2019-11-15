@@ -15,37 +15,30 @@ class InclinedPlane: SKSpriteNode{
     static var widthInit:Int = 30
     static var xCoordinateInit:Int = 300
     static var yCoordinateInit:Int = 300
+    static var frictionInit: CGFloat = 0.2 //0.0 to 1.0
     
-    var angle: Double
-    var length: Int
-    var width: Int
+   
+    init (scene: SKScene){
+        super.init(texture: SKTexture(imageNamed: "greyBlock"), color: UIColor.clear, size: CGSize(width: InclinedPlane.lengthInit, height: InclinedPlane.widthInit))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: InclinedPlane.lengthInit, height: InclinedPlane.widthInit))
+        self.physicsBody?.friction = InclinedPlane.frictionInit
+        self.position =  CGPoint(x: InclinedPlane.xCoordinateInit, y: InclinedPlane.yCoordinateInit)
+        self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.isDynamic = false
+        self.zRotation = CGFloat((CGFloat(InclinedPlane.angleInit) * CGFloat.pi)/180)
+        scene.addChild(self)
+    }
     
-    
-    init (angle: Double, length: Int, width: Int, scene: SKScene, position: CGPoint){
-        self.angle = angle
-        self.length = length
-        self.width = width
-        let texture = SKTexture(imageNamed: "greyBlock")
-        super.init(texture: texture, color: UIColor.clear, size: CGSize(width: length, height: width))
+    init (angle: Double, length: Int, width: Int, scene: SKScene, friction: CGFloat, position: CGPoint){
+        super.init(texture: SKTexture(imageNamed: "greyBlock"), color: UIColor.clear, size: CGSize(width: length, height: width))
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: length, height: width))
+        self.physicsBody?.friction = friction
         self.position = position
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.isDynamic = false
         self.zRotation = CGFloat((CGFloat(angle) * CGFloat.pi)/180)
-        //let pinned = SKSpriteNode(imageNamed: "pin")
-        //pinned.physicsBody = SKPhysicsBody(texture: pinned.texture!,
-        //                                   size: pinned.size)
-        //pinned.position = CGPoint(x: 0,y: 0)
-        //pinned.physicsBody?.pinned = true
- 
-        //self.addChild(pinned)
- 
+        
         scene.addChild(self)
-        
-        //super.init(rectOf: CGSize(width: length, height: width))
-        //super.init(rect: CGRect(x: point.x, y: point.y, width: CGFloat(length), height: CGFloat(width))))
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

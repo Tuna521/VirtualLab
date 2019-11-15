@@ -17,8 +17,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         Ball.colorInit = properties[1]
         Ball.xCoordinateInit = Int(properties[2])!
         Ball.yCoordinateInit = Int(properties[3])!
-        //
-        //print(properties)
+        Ball.massInit = CGFloat((properties[4] as NSString).doubleValue)
     }
     
     func didPropertiesChangeBlock(properties: [String]) {
@@ -27,6 +26,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         Block.xCoordinateInit = Int(properties[2])!
         Block.yCoordinateInit = Int(properties[3])!
         Block.colorInit = properties[4]
+        Ball.massInit = CGFloat((properties[5] as NSString).doubleValue)
         //
         //print(properties)
     }
@@ -46,6 +46,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         InclinedPlane.widthInit = Int(properties[2])!
         InclinedPlane.xCoordinateInit = Int(properties[3])!
         InclinedPlane.yCoordinateInit = Int(properties[4])!
+        InclinedPlane.frictionInit = CGFloat((properties[5] as NSString).doubleValue)
         //
         print(properties)
     }
@@ -90,12 +91,32 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         }
         
     }
+   
+    var bar1: SKShapeNode!
+    var bar2: SKShapeNode!
+    @IBAction func barrierOnOffSwitch(_ sender: UISwitch) {
+        if (sender.isOn == true){
+            bar1 = SKShapeNode(rectOf: CGSize(width: 5, height: scene2.size.height))
+            bar1.position = CGPoint(x: 0, y: scene2.size.height/2)
+            bar1.fillColor = SKColor.red
+            bar1.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: 0, y: -scene2.size.height / 2), to: CGPoint(x: 0, y: scene2.size.height))
+            scene2.addChild(bar1)
+            
+            bar2 = SKShapeNode(rectOf: CGSize(width: 5, height: scene2.size.height))
+            bar2.position = CGPoint(x: scene2.size.width-240, y: scene2.size.height/2)
+            bar2.fillColor = SKColor.red
+            bar2.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: 0, y: -scene2.size.height / 2), to: CGPoint(x: 0, y: scene2.size.height))
+            scene2.addChild(bar2)
+        }else{
+            scene2.removeChildren(in: [bar1, bar2])
+        }
+    }
     
     
     @IBAction func clearAllBtn(_ sender: UIButton) {
         scene2.removeAllChildren()
         let floor = SKShapeNode(rectOf: CGSize(width: scene2.size.width, height: 5))
-        floor.position = CGPoint(x: scene2.size.width / 2, y: 50)
+        floor.position = CGPoint(x: scene2.size.width / 2, y: 25)
         floor.fillColor = SKColor.red
         floor.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -scene2.size.width / 2, y: 0), to: CGPoint(x: scene2.size.width, y: 0))
         scene2.addChild(floor)
@@ -104,16 +125,17 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     
     @IBAction func circleBtn(_ sender: UIButton) {
         print("Circle tipped")
-        ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
-        ball.setTexture(texture: Ball.colorInit)
+        //ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
+        //ball.setTexture(texture: Ball.colorInit)
+        ball = Ball(scene: scene2)
     }
     
     
     @IBAction func blockBtn(_ sender: UIButton) {
         print("This is the block")
-        block = Block(width: Block.widthInit, height: Block.heightInit, scene: scene2, position: CGPoint(x: Block.xCoordinateInit, y: Block.yCoordinateInit))
-        //ball.physicsBody?.affectedByGravity = true
-        block.setTexture(texture: Block.colorInit)
+        //block = Block(width: Block.widthInit, height: Block.heightInit, scene: scene2, position: CGPoint(x: Block.xCoordinateInit, y: Block.yCoordinateInit))
+        //block.setTexture(texture: Block.colorInit)
+        block = Block(scene: scene2)
     }
     
     
@@ -122,12 +144,12 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         let vine = VineNode(length:VineNode.lengthInit, anchorPoint: CGPoint(x: VineNode.xCoordinateInit, y: VineNode.yCoordinateInit))
         vine.addToScene(scene2)
         if (VineNode.attachObjectInit == "Ball"){
-            ball = Ball(radius: Ball.radiusInit, scene: scene2, position: CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit))
+            ball = Ball(scene: scene2)
             ball.setTexture(texture: Ball.colorInit)
             vine.attachToBob(ball)
         }
         if (VineNode.attachObjectInit == "Block"){
-            block = Block(width: Block.widthInit, height: Block.heightInit, scene: scene2, position: CGPoint(x: Block.xCoordinateInit, y: Block.yCoordinateInit))
+            block = Block(scene: scene2)
             //ball.physicsBody?.affectedByGravity = true
             block.setTexture(texture: Block.colorInit)
             vine.attachToBob(block)
@@ -137,7 +159,8 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     
     @IBAction func inclinedPlaneBtn(_ sender: UIButton) {
         print("go to corner, it is the warmest 90 degrees")
-        let inclPlane = InclinedPlane(angle: InclinedPlane.angleInit, length: InclinedPlane.lengthInit, width: InclinedPlane.widthInit, scene: scene2, position: CGPoint(x: InclinedPlane.xCoordinateInit, y: InclinedPlane.yCoordinateInit))
+        let inclPlane = InclinedPlane(scene: scene2)
+        //let inclPlane = InclinedPlane(angle: InclinedPlane.angleInit, length: InclinedPlane.lengthInit, width: InclinedPlane.widthInit, scene: scene2, position: CGPoint(x: InclinedPlane.xCoordinateInit, y: InclinedPlane.yCoordinateInit))
     }
     
     

@@ -13,21 +13,27 @@ class Ball: SKSpriteNode {
     static var radiusInit:Int = 50
     static var xCoordinateInit:Int = 200
     static var yCoordinateInit:Int = 200
+    static var massInit: CGFloat = 0.5
     static var colorInit:String = "redBall"
-    var ballRadius: Int!
-    var ballPosition: CGPoint
-    var ballTexture: SKTexture
+
    
+    init(scene:SKScene){
+        super.init(texture: nil, color: UIColor.clear, size: CGSize(width: Ball.radiusInit*2, height: Ball.radiusInit*2))
+        self.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(Ball.radiusInit))
+        self.physicsBody?.mass = Ball.massInit
+        self.position = CGPoint(x: Ball.xCoordinateInit, y: Ball.yCoordinateInit)
+        self.texture = SKTexture(imageNamed: Ball.colorInit)
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.name = "draggable"
+        scene.addChild(self)
+    }
     
-    init(radius: Int, scene: SKScene, position: CGPoint) {
-        
-        self.ballRadius = radius
-        self.ballPosition = position
-        self.ballTexture = SKTexture(imageNamed: "goldBall")
+    init(radius: Int, scene: SKScene, mass: CGFloat, position: CGPoint) {
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: radius*2, height: radius*2))
         self.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(radius))
+        self.physicsBody?.mass = mass
         self.position = position
-        self.texture = self.ballTexture
+        self.texture = SKTexture(imageNamed: "goldBall")
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.name = "draggable"
         scene.addChild(self)
@@ -39,8 +45,7 @@ class Ball: SKSpriteNode {
     }
     
     func setTexture (texture: String){
-        self.ballTexture = SKTexture(imageNamed: texture)
-        self.texture = self.ballTexture
+        self.texture = SKTexture(imageNamed: texture)
     }
 
     //SET

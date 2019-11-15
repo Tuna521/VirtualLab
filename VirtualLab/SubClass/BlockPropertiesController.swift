@@ -19,6 +19,8 @@ class BlockPropertiesController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBOutlet weak var widthBlock: UITextField!
     
+    @IBOutlet weak var massBlock: UITextField!
+    
     @IBOutlet weak var heightBlock: UITextField!
     
     @IBOutlet weak var colorBlock: UIPickerView!
@@ -51,20 +53,28 @@ class BlockPropertiesController: UIViewController, UIPickerViewDelegate, UIPicke
     
     
     @IBAction func doneButtonBlock(_ sender: Any) {
-        if widthBlock.text! == ""{properties.append(String(Block.widthInit))}
+        if (widthBlock.text! == "")||(Int(widthBlock.text!) ?? -2 < 0)
+        {properties.append(String(Block.widthInit))}
         else{properties.append(widthBlock.text!)}
 
-        if heightBlock.text! == ""{properties.append(String(Block.heightInit))}
+        if (heightBlock.text! == "")||(Int(heightBlock.text!) ?? -2 < 0)
+        {properties.append(String(Block.heightInit))}
         else{properties.append(heightBlock.text!)}
 
-        if xCoordinateBlock.text! == ""{properties.append(String(Block.xCoordinateInit))}
+        if (xCoordinateBlock.text! == "")||(Int(xCoordinateBlock.text!) ?? -2 < 0)
+        {properties.append(String(Block.xCoordinateInit))}
         else{properties.append(xCoordinateBlock.text!)}
         
-        if yCoordinateBlock.text! == ""{properties.append(String(Block.yCoordinateInit))}
-        else{properties.append(yCoordinateBlock.text!)}
+        if (yCoordinateBlock.text! == "")||(Int(yCoordinateBlock.text!) ?? -2 < 0)
+        {properties.append(String(Block.yCoordinateInit))}
         
         pickedColor = pickedColor + "Block"
         properties.append(pickedColor)
+        
+        if (massBlock.text! == "")||(Int(massBlock.text!) ?? -2 < 0)
+        {properties.append(String(describing:Block.massInit))}
+        else{properties.append(yCoordinateBlock.text!)}
+        
         delegate?.didPropertiesChangeBlock(properties: properties)
         navigationController?.dismiss(animated: true)
     }

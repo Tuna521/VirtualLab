@@ -36,7 +36,7 @@ class VineNode: SKNode {
     private let length: Int
     private let anchorPoint: CGPoint
     private var vineSegments: [SKNode] = []
-    
+
     init(length: Int, anchorPoint: CGPoint) {
         self.length = length
         self.anchorPoint = anchorPoint

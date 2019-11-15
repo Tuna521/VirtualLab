@@ -97,7 +97,6 @@
 				267B49E3221E7CDB00823FF9 /* GameScene.swift */,
 				26C7813722310969001F0420 /* Objects */,
 				26BA007E2238F0A200AE3EE9 /* Constant.swift */,
-				26BA008C223A1EC100AE3EE9 /* Spring.swift */,
 				267B49E5221E7CDB00823FF9 /* GameViewController.swift */,
 				267B49E7221E7CDB00823FF9 /* Main.storyboard */,
 				26D5949D22BA2F0F008324D4 /* Timer.swift */,
@@ -123,6 +122,7 @@
 				26BF1ABD22267D8D00B59FA4 /* Ball.swift */,
 				26C78135223107CA001F0420 /* Block.swift */,
 				26BA008A223A1EA200AE3EE9 /* VineNode.swift */,
+				26BA008C223A1EC100AE3EE9 /* Spring.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";

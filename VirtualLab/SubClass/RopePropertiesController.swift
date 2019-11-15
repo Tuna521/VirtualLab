@@ -46,13 +46,13 @@ class RopePropertiesController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     @IBAction func doneButtonRope(_ sender: Any) {
-        if lengthRope.text! == ""{properties.append(String(VineNode.lengthInit))}
+        if (lengthRope.text! == "")||(Int(lengthRope.text!) ?? -2 < 0){properties.append(String(VineNode.lengthInit))}
         else{properties.append(lengthRope.text!)}
 
-        if xCoordinateRope.text! == ""{properties.append(String(VineNode.xCoordinateInit))}
+        if (xCoordinateRope.text! == "")||(Int(xCoordinateRope.text!) ?? -2 < 0){properties.append(String(VineNode.xCoordinateInit))}
         else{properties.append(xCoordinateRope.text!)}
         
-        if yCoordinateRope.text! == ""{properties.append(String(VineNode.yCoordinateInit))}
+        if (yCoordinateRope.text! == "")||(Int(yCoordinateRope.text!) ?? -2 < 0){properties.append(String(VineNode.yCoordinateInit))}
         else{properties.append(yCoordinateRope.text!)}
         
         properties.append(pickedObject)
