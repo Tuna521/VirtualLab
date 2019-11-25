@@ -10,13 +10,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, BallPropertiesControllerDelegate, BlockPropertiesControllerDelegate, RopePropertiesControllerDelegate, InclinedPlanePropertiesControllerDelegate {
+class GameViewController: UIViewController, BallPropertiesControllerDelegate, BlockPropertiesControllerDelegate, RopePropertiesControllerDelegate, InclinedPlanePropertiesControllerDelegate, SpringPropertiesControllerDelegate {
     
     func didPropertiesChangeBall(properties: [String]) {
         Ball.radiusInit = Int(properties[0])!
         Ball.colorInit = properties[1]
         Ball.xCoordinateInit = Int(properties[2])!
-        Ball.yCoordinateInit = Int(properties[3])!
+        Ball.yCoordinateInit = Int(properties[3])! + 130
         Ball.massInit = CGFloat((properties[4] as NSString).doubleValue)
     }
     
@@ -24,7 +24,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         Block.widthInit = Int(properties[0])!
         Block.heightInit = Int(properties[1])!
         Block.xCoordinateInit = Int(properties[2])!
-        Block.yCoordinateInit = Int(properties[3])!
+        Block.yCoordinateInit = Int(properties[3])! + 130
         Block.colorInit = properties[4]
         Ball.massInit = CGFloat((properties[5] as NSString).doubleValue)
         //
@@ -34,7 +34,7 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     func didPropertiesChangeRope(properties: [String]) {
         VineNode.lengthInit = Int(properties[0])!
         VineNode.xCoordinateInit = Int(properties[1])!
-        VineNode.yCoordinateInit = Int(properties[2])!
+        VineNode.yCoordinateInit = Int(properties[2])! + 130
         VineNode.attachObjectInit = properties[3]
         //
         print(properties)
@@ -45,9 +45,19 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         InclinedPlane.lengthInit = Int(properties[1])!
         InclinedPlane.widthInit = Int(properties[2])!
         InclinedPlane.xCoordinateInit = Int(properties[3])!
-        InclinedPlane.yCoordinateInit = Int(properties[4])!
+        InclinedPlane.yCoordinateInit = Int(properties[4])! + 130
         InclinedPlane.frictionInit = CGFloat((properties[5] as NSString).doubleValue)
         //
+        print(properties)
+    }
+    
+    func didPropertiesChangeSpring(properties: [String]) {
+        Spring.attachObjectInit = properties[0]
+        Spring.xCoordinateInit = Int(properties[1])!
+        Spring.yCoordinateTopInit = Int(properties[2])!
+        Spring.yCoordinateBottomInit = Int(properties[3])!
+        Spring.dampingInit = CGFloat((properties[4] as NSString).doubleValue)
+        Spring.frequencyInit = CGFloat((properties[5] as NSString).doubleValue)
         print(properties)
     }
     
@@ -70,9 +80,16 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
                 classRopeProperties.delegate = self
             }
         }
+        
         if (segue.identifier == "inclinedPlane"){
             if let nav = segue.destination as? UINavigationController, let classInclinedPlaneProperties = nav.topViewController as? InclinedPlanePropertiesController {
                 classInclinedPlaneProperties.delegate = self
+            }
+        }
+        
+        if (segue.identifier == "spring"){
+            if let nav = segue.destination as? UINavigationController, let classSpringProperties = nav.topViewController as? SpringPropertiesController {
+                classSpringProperties.delegate = self
             }
         }
     }
@@ -99,12 +116,14 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
             bar1 = SKShapeNode(rectOf: CGSize(width: 5, height: scene2.size.height))
             bar1.position = CGPoint(x: 0, y: scene2.size.height/2)
             bar1.fillColor = SKColor.red
+            bar1.name = "undeletable"
             bar1.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: 0, y: -scene2.size.height / 2), to: CGPoint(x: 0, y: scene2.size.height))
             scene2.addChild(bar1)
             
             bar2 = SKShapeNode(rectOf: CGSize(width: 5, height: scene2.size.height))
             bar2.position = CGPoint(x: scene2.size.width-240, y: scene2.size.height/2)
             bar2.fillColor = SKColor.red
+            bar2.name = "undeletable"
             bar2.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: 0, y: -scene2.size.height / 2), to: CGPoint(x: 0, y: scene2.size.height))
             scene2.addChild(bar2)
         }else{
@@ -113,10 +132,12 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     }
     
     
+    
     @IBAction func clearAllBtn(_ sender: UIButton) {
         scene2.removeAllChildren()
         let floor = SKShapeNode(rectOf: CGSize(width: scene2.size.width, height: 5))
-        floor.position = CGPoint(x: scene2.size.width / 2, y: 25)
+        floor.position = CGPoint(x: scene2.size.width / 2, y: 130)
+        floor.name = "undeletable"
         floor.fillColor = SKColor.red
         floor.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -scene2.size.width / 2, y: 0), to: CGPoint(x: scene2.size.width, y: 0))
         scene2.addChild(floor)
@@ -163,9 +184,13 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         //let inclPlane = InclinedPlane(angle: InclinedPlane.angleInit, length: InclinedPlane.lengthInit, width: InclinedPlane.widthInit, scene: scene2, position: CGPoint(x: InclinedPlane.xCoordinateInit, y: InclinedPlane.yCoordinateInit))
     }
     
+    @IBAction func springBtn(_ sender: UIButton) {
+        print("Boing, boing")
+        let spring = Spring(object: Spring.attachObjectInit, xCoordinate: Spring.xCoordinateInit, yCoordinateTop: Spring.yCoordinateTopInit, yCoordinateBottom: Spring.yCoordinateBottomInit, frequency: Spring.frequencyInit, damping: Spring.dampingInit, scene: scene2)
+    }
     
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    //@IBOutlet weak var collectionView: UICollectionView!
     
     let dataArray = ["Ball","Spring","String","Plane","Block"]
     

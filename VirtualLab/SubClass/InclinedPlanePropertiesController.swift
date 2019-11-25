@@ -15,6 +15,7 @@ protocol InclinedPlanePropertiesControllerDelegate: class {
 
 class InclinedPlanePropertiesController: UIViewController{
     
+    
     @IBOutlet weak var frictionInclinedPlane: UITextField!
     @IBOutlet weak var angleInclinedPlane: UITextField!
     @IBOutlet weak var lengthInclinedPlane: UITextField!
@@ -44,7 +45,8 @@ class InclinedPlanePropertiesController: UIViewController{
         if (yCoordinateInclinedPlane.text! == "")||(Int(yCoordinateInclinedPlane.text!) ?? -2 < 0){properties.append(String(InclinedPlane.yCoordinateInit))}
         else{properties.append(yCoordinateInclinedPlane.text!)}
         
-        if (frictionInclinedPlane.text! == "")||(Int(frictionInclinedPlane.text!) ?? -2 < 0){properties.append(String(describing: InclinedPlane.frictionInit))}
+        if (frictionInclinedPlane.text! == "")||(Int(frictionInclinedPlane.text!) ?? -2 < 0){
+            properties.append(String(describing: InclinedPlane.frictionInit))}
         else{properties.append(frictionInclinedPlane.text!)}
         
         

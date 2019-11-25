@@ -16,14 +16,16 @@ class GameScene: SKScene {
     var factor: Double!
     private var currentNode: SKNode?
     
+    
     override func didMove(to view: SKView) {
         //physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -9.8)
         //physicsWorld.speed = 1.0
         
         floor = SKShapeNode(rectOf: CGSize(width: size.width, height: 5))
-        floor.position = CGPoint(x: size.width / 2, y: 25)
+        floor.position = CGPoint(x: size.width / 2, y: 130)
         floor.fillColor = SKColor.red
+        floor.name = "undeletable"
         floor.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -size.width / 2, y: 0), to: CGPoint(x: size.width, y: 0))
         addChild(floor)
         
@@ -65,9 +67,14 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
-            
             let touchedNodes = self.nodes(at: location)
+             
             for node in touchedNodes.reversed() {
+             if (touch.tapCount == 3) && (node.name != "undeletable"){
+                 self.removeChildren(in: [node])
+                 print("deleted")
+             }
+             
              if node.name == "draggable" || node.name == "draggableSpring" {
                     self.currentNode?.physicsBody?.isDynamic = false
                     self.currentNode = node
@@ -103,7 +110,14 @@ class GameScene: SKScene {
         // Called before each frame is rendered
         //factor = 20 * sin(currentTime)
         //spring.yScale = CGFloat(sin(3 * currentTime) + 1.5)
-        
+        //mySpring.springPicture.size.height = sqrt(pow(mySpring.staticNode.position.y - mySpring.dynamicNode.position.y,2) + pow(mySpring.staticNode.position.x - mySpring.dynamicNode.position.x,2))
+        //let a = atan((mySpring.staticNode.position.y - mySpring.dynamicNode.position.y)/(mySpring.staticNode.position.x - mySpring.dynamicNode.position.x))
+        //print (a)
+        //if a < 0 {
+            //mySpring.springPicture.zRotation = a + CGFloat.pi/2
+        //}else {
+            //mySpring.springPicture.zRotation = a - CGFloat.pi/2
+        //}
     }
 }
 

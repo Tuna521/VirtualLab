@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		266528F622A9409300D3682F /* SAFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266528F522A9409300D3682F /* SAFollowButton.swift */; };
+		267349A12388204C000FD1C1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267349A02388204C000FD1C1 /* TimerViewController.swift */; };
+		267349A3238C10C7000FD1C1 /* SpringPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267349A2238C10C7000FD1C1 /* SpringPropertiesController.swift */; };
 		267B49DE221E7CDA00823FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B49DD221E7CDA00823FF9 /* AppDelegate.swift */; };
 		267B49E4221E7CDB00823FF9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B49E3221E7CDB00823FF9 /* GameScene.swift */; };
 		267B49E6221E7CDB00823FF9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B49E5221E7CDB00823FF9 /* GameViewController.swift */; };
@@ -23,12 +25,13 @@
 		26C78136223107CA001F0420 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C78135223107CA001F0420 /* Block.swift */; };
 		26D5949822B3C722008324D4 /* BallPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949722B3C722008324D4 /* BallPropertiesController.swift */; };
 		26D5949C22B833D3008324D4 /* BlockPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */; };
-		26D5949E22BA2F10008324D4 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949D22BA2F0F008324D4 /* Timer.swift */; };
 		26D594A022C53E1B008324D4 /* RopePropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5949F22C53E1B008324D4 /* RopePropertiesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		266528F522A9409300D3682F /* SAFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAFollowButton.swift; sourceTree = "<group>"; };
+		267349A02388204C000FD1C1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		267349A2238C10C7000FD1C1 /* SpringPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringPropertiesController.swift; sourceTree = "<group>"; };
 		267B49DA221E7CDA00823FF9 /* VirtualLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267B49DD221E7CDA00823FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		267B49E3221E7CDB00823FF9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -46,7 +49,6 @@
 		26C78135223107CA001F0420 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		26D5949722B3C722008324D4 /* BallPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallPropertiesController.swift; sourceTree = "<group>"; };
 		26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPropertiesController.swift; sourceTree = "<group>"; };
-		26D5949D22BA2F0F008324D4 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		26D5949F22C53E1B008324D4 /* RopePropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopePropertiesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,8 @@
 				26D5949B22B833D3008324D4 /* BlockPropertiesController.swift */,
 				26D5949F22C53E1B008324D4 /* RopePropertiesController.swift */,
 				269203E1234C8A2E006C4665 /* InclinedPlanePropertiesController.swift */,
+				267349A2238C10C7000FD1C1 /* SpringPropertiesController.swift */,
+				267349A02388204C000FD1C1 /* TimerViewController.swift */,
 			);
 			path = SubClass;
 			sourceTree = "<group>";
@@ -99,7 +103,6 @@
 				26BA007E2238F0A200AE3EE9 /* Constant.swift */,
 				267B49E5221E7CDB00823FF9 /* GameViewController.swift */,
 				267B49E7221E7CDB00823FF9 /* Main.storyboard */,
-				26D5949D22BA2F0F008324D4 /* Timer.swift */,
 				267B49EA221E7CDC00823FF9 /* Assets.xcassets */,
 				267B49EC221E7CDD00823FF9 /* LaunchScreen.storyboard */,
 				267B49EF221E7CDD00823FF9 /* Info.plist */,
@@ -202,16 +205,17 @@
 				26D5949822B3C722008324D4 /* BallPropertiesController.swift in Sources */,
 				26BA008B223A1EA200AE3EE9 /* VineNode.swift in Sources */,
 				267B49E4221E7CDB00823FF9 /* GameScene.swift in Sources */,
-				26D5949E22BA2F10008324D4 /* Timer.swift in Sources */,
 				26D5949C22B833D3008324D4 /* BlockPropertiesController.swift in Sources */,
 				26BA007F2238F0A200AE3EE9 /* Constant.swift in Sources */,
 				26BF1AC2222FB89300B59FA4 /* InclinedPlane.swift in Sources */,
 				266528F622A9409300D3682F /* SAFollowButton.swift in Sources */,
 				267B49E6221E7CDB00823FF9 /* GameViewController.swift in Sources */,
 				26D594A022C53E1B008324D4 /* RopePropertiesController.swift in Sources */,
+				267349A12388204C000FD1C1 /* TimerViewController.swift in Sources */,
 				26C78136223107CA001F0420 /* Block.swift in Sources */,
 				269203E2234C8A2E006C4665 /* InclinedPlanePropertiesController.swift in Sources */,
 				267B49DE221E7CDA00823FF9 /* AppDelegate.swift in Sources */,
+				267349A3238C10C7000FD1C1 /* SpringPropertiesController.swift in Sources */,
 				26BA008D223A1EC100AE3EE9 /* Spring.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 934X455QKT;
 				INFOPLIST_FILE = VirtualLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -380,7 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 934X455QKT;
 				INFOPLIST_FILE = VirtualLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
