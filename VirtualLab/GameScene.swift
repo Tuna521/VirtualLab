@@ -118,7 +118,10 @@ class GameScene: SKScene {
         //}else {
             //mySpring.springPicture.zRotation = a - CGFloat.pi/2
         //}
+        self.enumerateChildNodes(withName: "Spring") {
+            (node, stop) in
+            let n = node as! Spring
+            n.yChange()
+        }
     }
 }
-
-

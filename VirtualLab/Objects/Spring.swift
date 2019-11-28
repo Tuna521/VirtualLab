@@ -23,8 +23,8 @@ class Spring: SKSpriteNode{
     var dynamicNode: SKSpriteNode = SKSpriteNode(color: UIColor.clear, size: CGSize(width: 1, height: 1))
     
     init(object: String, xCoordinate: Int, yCoordinateTop: Int, yCoordinateBottom: Int, frequency: CGFloat, damping: CGFloat, scene: SKScene) {
-        super.init(texture:nil, color: UIColor.clear, size: CGSize.zero)
-
+        super.init(texture: SKTexture(imageNamed: "spring"), color: UIColor.clear, size: CGSize(width: 44, height: 150))
+        self.name = "Spring"
         
         //CREATING THE TOP ANCHOR
         staticNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 1, height: 1))
@@ -55,22 +55,29 @@ class Spring: SKSpriteNode{
         
         scene.physicsWorld.add(spring)
         
-        springPicture.position = CGPoint(x: xCoordinate, y: yCoordinateTop)
-        springPicture.anchorPoint = CGPoint(x: 0.5, y: 1)
+        self.position = CGPoint(x: xCoordinate, y: yCoordinateTop)
+        self.anchorPoint = CGPoint(x: 0.5, y: 1)
     
-        scene.addChild(springPicture)
+        scene.addChild(self)
         //let move = SKAction.moveBy(x:0, y: 200, duration: 1)
         //staticNode.run(move)
     
     }
-
-    func yChange()-> CGPoint{
-        return dynamicNode.position;
-    }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func yChange(){
+        self.size.height = sqrt(pow(self.staticNode.position.y - self.dynamicNode.position.y,2) + pow(self.staticNode.position.x - self.dynamicNode.position.x,2))
+        print("Im here")
+        let a = atan((self.staticNode.position.y - self.dynamicNode.position.y)/(self.staticNode.position.x - self.dynamicNode.position.x))
+        if a < 0 {
+            self.zRotation = a + CGFloat.pi/2
+        }else {
+            self.zRotation = a - CGFloat.pi/2
+        }
+    }
+    
 }
 
