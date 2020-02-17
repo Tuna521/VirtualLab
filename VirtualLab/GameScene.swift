@@ -31,18 +31,16 @@ class GameScene: SKScene {
         
         //let inclinedPlane = InclinedPlane(angle: 10, length: 400, width: 30, scene: self, position: CGPoint(x: 300, y: 300))
         
-        let block = Block(width: 200, height: 100, scene: self, mass: 0.1, position: CGPoint(x: 500, y: 400))
-        block.setTexture(texture: "greyBlock")
+        //let block = Block(width: 200, height: 100, scene: self, mass: 0.1, position: CGPoint(x: 500, y: 400), color: "greyBlock")
         
-        let ball2 = Ball(radius: 20, scene: self, mass: 0.01, position: CGPoint(x: 300, y: 600))
-        ball2.setTexture(texture: "metalBall")
+        //let ball2 = Ball(radius: 20, scene: self, mass: 0.01, position: CGPoint(x: 300, y: 600), color: "metalBall")
         
 
-        let vine1 = VineNode(length: 10, anchorPoint: CGPoint(x: 100, y: 400))
-        vine1.addToScene(self)
-        vine1.attachToBob(ball2)
+        //let vine1 = VineNode(length: 10, anchorPoint: CGPoint(x: 100, y: 400))
+        //vine1.addToScene(self)
+        //vine1.attachToBob(ball2)
         
-        let ball1 = Ball(radius: 30, scene: self, mass: 0.5, position: CGPoint(x: 700, y: 700))
+        //let ball1 = Ball(radius: 30, scene: self, mass: 0.5, position: CGPoint(x: 700, y: 700), color)
         //spring = Spring(sizeA: CGSize(width: Spring.initSizeA, height: Spring.initSizeA), sizeB: CGSize(width: Spring.initSizeB, height: Spring.initSizeB), positionA: CGPoint(x: Spring.initCoordinateXA, y: Spring.initCoordinateYA), positionB: CGPoint(x: Spring.initCoordinateXB, y: Spring.initCoordinateYB), frequency: CGFloat(Spring.initFrequency), damping: CGFloat(Spring.initDamping), scene: self)
         //let positionSpring = CGPoint(x: 500, y: 600)
         //spring.position = positionSpring
@@ -75,7 +73,7 @@ class GameScene: SKScene {
                  print("deleted")
              }
              
-             if node.name == "draggable" || node.name == "draggableSpring" {
+                if node.name == "draggable" || node.name == "draggableSpring" || node.name == "nowDraggable"{
                     self.currentNode?.physicsBody?.isDynamic = false
                     self.currentNode = node
                 }
@@ -107,17 +105,6 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        //factor = 20 * sin(currentTime)
-        //spring.yScale = CGFloat(sin(3 * currentTime) + 1.5)
-        //mySpring.springPicture.size.height = sqrt(pow(mySpring.staticNode.position.y - mySpring.dynamicNode.position.y,2) + pow(mySpring.staticNode.position.x - mySpring.dynamicNode.position.x,2))
-        //let a = atan((mySpring.staticNode.position.y - mySpring.dynamicNode.position.y)/(mySpring.staticNode.position.x - mySpring.dynamicNode.position.x))
-        //print (a)
-        //if a < 0 {
-            //mySpring.springPicture.zRotation = a + CGFloat.pi/2
-        //}else {
-            //mySpring.springPicture.zRotation = a - CGFloat.pi/2
-        //}
         self.enumerateChildNodes(withName: "Spring") {
             (node, stop) in
             let n = node as! Spring

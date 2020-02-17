@@ -131,7 +131,19 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         }
     }
     
+    @IBOutlet weak var heightRuler: UIImageView!
     
+    @IBOutlet weak var widthRuler: UIImageView!
+    
+    @IBAction func showRulerSwitch(_ sender: UISwitch) {
+         if (sender.isOn == true){
+            heightRuler.isHidden = false
+            widthRuler.isHidden = false
+        }else{
+            heightRuler.isHidden = true
+            widthRuler.isHidden = true
+        }
+    }
     
     @IBAction func clearAllBtn(_ sender: UIButton) {
         scene2.removeAllChildren()
@@ -177,6 +189,23 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         }
     }
     
+    @IBAction func safetySwitch(_ sender: UISwitch) {
+        if (sender.isOn == false){
+            scene2.enumerateChildNodes(withName: "unDraggable") {
+                (node, stop) in
+                node.name = "nowDraggable"
+                node.physicsBody?.isDynamic = false
+                print (node.name)
+            }
+        } else {
+            scene2.enumerateChildNodes(withName: "nowDraggable") {
+                (node, stop) in
+                node.name = "unDraggable"
+                node.physicsBody?.isDynamic = false
+                print (node.name)
+            }
+        }
+    }
     
     @IBAction func inclinedPlaneBtn(_ sender: UIButton) {
         print("go to corner, it is the warmest 90 degrees")
@@ -186,14 +215,13 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
     
     @IBAction func springBtn(_ sender: UIButton) {
         print("Boing, boing")
-        let spring = Spring(object: Spring.attachObjectInit, xCoordinate: Spring.xCoordinateInit, yCoordinateTop: Spring.yCoordinateTopInit, yCoordinateBottom: Spring.yCoordinateBottomInit, frequency: Spring.frequencyInit, damping: Spring.dampingInit, scene: scene2)
+        let spring = Spring(scene: scene2)
     }
     
     
     //@IBOutlet weak var collectionView: UICollectionView!
     
     let dataArray = ["Ball","Spring","String","Plane","Block"]
-    
     
     
     
@@ -207,6 +235,8 @@ class GameViewController: UIViewController, BallPropertiesControllerDelegate, Bl
         //Register Cell
         
         scene2 = GameScene(size: view.frame.size)
+        scene2.backgroundColor = UIColor(red: 0.023, green: 0.013, blue:  0.108, alpha: 1)
+        
         if let view = self.view as! SKView? {
             view.presentScene(scene2)
             view.ignoresSiblingOrder = true

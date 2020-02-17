@@ -28,7 +28,7 @@ import UIKit
 import SpriteKit
 
 class VineNode: SKNode {
-    static var lengthInit:Int = 30
+    static var lengthInit:Int = 10
     static var xCoordinateInit:Int = 500
     static var yCoordinateInit:Int = 500
     static var attachObjectInit:String = "Ball"

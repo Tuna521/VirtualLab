@@ -25,6 +25,7 @@ class InclinedPlane: SKSpriteNode{
         self.position =  CGPoint(x: InclinedPlane.xCoordinateInit, y: InclinedPlane.yCoordinateInit)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.isDynamic = false
+        self.name = "unDraggable"
         self.zRotation = CGFloat((CGFloat(InclinedPlane.angleInit) * CGFloat.pi)/180)
         scene.addChild(self)
     }
@@ -36,6 +37,7 @@ class InclinedPlane: SKSpriteNode{
         self.position = position
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.isDynamic = false
+        self.name = "unDraggable"
         self.zRotation = CGFloat((CGFloat(angle) * CGFloat.pi)/180)
         
         scene.addChild(self)

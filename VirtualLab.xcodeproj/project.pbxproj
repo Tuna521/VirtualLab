@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265F13B423F67C1700364A55 /* InformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F13B323F67C1700364A55 /* InformationController.swift */; };
 		266528F622A9409300D3682F /* SAFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266528F522A9409300D3682F /* SAFollowButton.swift */; };
 		267349A12388204C000FD1C1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267349A02388204C000FD1C1 /* TimerViewController.swift */; };
 		267349A3238C10C7000FD1C1 /* SpringPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267349A2238C10C7000FD1C1 /* SpringPropertiesController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		265F13B323F67C1700364A55 /* InformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationController.swift; sourceTree = "<group>"; };
 		266528F522A9409300D3682F /* SAFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAFollowButton.swift; sourceTree = "<group>"; };
 		267349A02388204C000FD1C1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		267349A2238C10C7000FD1C1 /* SpringPropertiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringPropertiesController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				269203E1234C8A2E006C4665 /* InclinedPlanePropertiesController.swift */,
 				267349A2238C10C7000FD1C1 /* SpringPropertiesController.swift */,
 				267349A02388204C000FD1C1 /* TimerViewController.swift */,
+				265F13B323F67C1700364A55 /* InformationController.swift */,
 			);
 			path = SubClass;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				26BA007F2238F0A200AE3EE9 /* Constant.swift in Sources */,
 				26BF1AC2222FB89300B59FA4 /* InclinedPlane.swift in Sources */,
 				266528F622A9409300D3682F /* SAFollowButton.swift in Sources */,
+				265F13B423F67C1700364A55 /* InformationController.swift in Sources */,
 				267B49E6221E7CDB00823FF9 /* GameViewController.swift in Sources */,
 				26D594A022C53E1B008324D4 /* RopePropertiesController.swift in Sources */,
 				267349A12388204C000FD1C1 /* TimerViewController.swift in Sources */,

@@ -27,13 +27,13 @@ class Block: SKSpriteNode {
         scene.addChild(self)
     }
     
-    init(width: Int, height: Int, scene: SKScene, mass: CGFloat, position: CGPoint) {
+    init(width: Int, height: Int, scene: SKScene, mass: CGFloat, position: CGPoint, color: String) {
         
         super.init(texture: SKTexture(imageNamed: "greyBlock"), color: UIColor.clear, size: CGSize(width: width, height: height))
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: width, height: height))
         self.physicsBody?.mass = mass
         self.position = position
-        self.texture = SKTexture(imageNamed: "greyBlock")
+        self.texture = SKTexture(imageNamed: color)
         self.name = "draggable"
         scene.addChild(self)
 

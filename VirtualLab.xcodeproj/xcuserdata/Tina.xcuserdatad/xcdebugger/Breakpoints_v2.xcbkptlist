@@ -32,10 +32,10 @@
             timestampString = "584049507.902797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "blockBtn(_:)"
-            landmarkType = "7">
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -51,8 +51,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -67,8 +67,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "didPropertiesChangeRope(properties:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -83,8 +83,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
             endingLineNumber = "61"
-            landmarkName = "didPropertiesChangeSpring(properties:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -115,8 +115,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "didPropertiesChangeBall(properties:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,22 +186,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B0AA4839-31C2-4D14-B357-6DEA256DFD9A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VirtualLab/Objects/Spring.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "init(object:xCoordinate:yCoordinateTop:yCoordinateBottom:frequency:damping:scene:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "04ADD9A8-BCFF-46AA-A5A4-D19127C94E22"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -209,10 +193,8 @@
             filePath = "VirtualLab/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "update(_:)"
-            landmarkType = "7">
+            startingLineNumber = "115"
+            endingLineNumber = "115">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -225,10 +207,8 @@
             filePath = "VirtualLab/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "update(_:)"
-            landmarkType = "7">
+            startingLineNumber = "115"
+            endingLineNumber = "115">
             <Locations>
                <Location
                   uuid = "10C07090-6BBD-4473-B9BA-275000BF4038 - 9b6bd9e72476578b"
@@ -273,10 +253,116 @@
             filePath = "VirtualLab/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "update(_:)"
-            landmarkType = "7">
+            startingLineNumber = "115"
+            endingLineNumber = "115">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A79F74FF-6AF6-4145-AD6C-AED023A2EF82"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VirtualLab/Objects/VineNode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "VineNode"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A79F74FF-6AF6-4145-AD6C-AED023A2EF82 - 20822cd068d7e8dd"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_00CD49B1369A0160D3C27539BD024950_func2"
+                  moduleName = "VirtualLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tina/Desktop/vlab/VirtualLab1/VirtualLab/Objects/VineNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "A79F74FF-6AF6-4145-AD6C-AED023A2EF82 - 358c381074dc4b32"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VirtualLab.VineNode.yCoordinateInit.unsafeMutableAddressor : Swift.Int"
+                  moduleName = "VirtualLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tina/Desktop/vlab/VirtualLab1/VirtualLab/Objects/VineNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "A79F74FF-6AF6-4145-AD6C-AED023A2EF82 - 762848cdb9d72789"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static VirtualLab.VineNode.yCoordinateInit.getter : Swift.Int"
+                  moduleName = "VirtualLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tina/Desktop/vlab/VirtualLab1/VirtualLab/Objects/VineNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "81">
+               </Location>
+               <Location
+                  uuid = "A79F74FF-6AF6-4145-AD6C-AED023A2EF82 - 25b4a1cb2076527d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static VirtualLab.VineNode.yCoordinateInit.setter : Swift.Int"
+                  moduleName = "VirtualLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tina/Desktop/vlab/VirtualLab1/VirtualLab/Objects/VineNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "A79F74FF-6AF6-4145-AD6C-AED023A2EF82 - da1b8fb13b50428e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static VirtualLab.VineNode.yCoordinateInit.modify : Swift.Int"
+                  moduleName = "VirtualLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tina/Desktop/vlab/VirtualLab1/VirtualLab/Objects/VineNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "A79F74FF-6AF6-4145-AD6C-AED023A2EF82 - cdce9097531ce77d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static VirtualLab.VineNode.yCoordinateInit.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "VirtualLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tina/Desktop/vlab/VirtualLab1/VirtualLab/Objects/VineNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

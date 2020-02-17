@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Ball: SKSpriteNode {
-    static var radiusInit:Int = 50
+    static var radiusInit:Int = 25
     static var xCoordinateInit:Int = 200
     static var yCoordinateInit:Int = 200
     static var massInit: CGFloat = 0.5
@@ -28,12 +28,12 @@ class Ball: SKSpriteNode {
         scene.addChild(self)
     }
     
-    init(radius: Int, scene: SKScene, mass: CGFloat, position: CGPoint) {
+    init(radius: Int, scene: SKScene, mass: CGFloat, position: CGPoint, color: String) {
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: radius*2, height: radius*2))
         self.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(radius))
         self.physicsBody?.mass = mass
         self.position = position
-        self.texture = SKTexture(imageNamed: "goldBall")
+        self.texture = SKTexture(imageNamed: color)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.name = "draggable"
         scene.addChild(self)
